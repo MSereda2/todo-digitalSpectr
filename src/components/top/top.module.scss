@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+.top {
+  position: sticky;
+  top: 0;
+  background-color: $COLOR-WHITE;
+  padding: 2.5rem;
+  border-bottom: 1px solid $COLOR-LIGHT-GRAY ;
+  text-align: center;
+
+  &__data {
+    font-size: 1.8rem;
+    color: $COLOR-PRIMARY;
+  }
+}

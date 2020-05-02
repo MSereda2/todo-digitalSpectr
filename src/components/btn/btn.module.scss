@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.btn {
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  color: $COLOR-PRIMARY;
+  background-color: $COLOR-WHITE;
+  border: 1px solid $COLOR-PRIMARY;
+  margin-right: 1rem;
+  transition: all .1s;
+
+  &:hover {
+    color: $COLOR-WHITE;
+    background-color: darken($COLOR-PRIMARY, $amount: 5);
+  }
+}

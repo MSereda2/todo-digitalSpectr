@@ -1,0 +1,13 @@
+@import '../../../styles/variables';;
+
+.select {
+  width: 100%;
+  padding: .8rem 4rem;
+  outline: none;
+
+  &__label {
+    color: $COLOR-MAIN-GRAY;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
+}

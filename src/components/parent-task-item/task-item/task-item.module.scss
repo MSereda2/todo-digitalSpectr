@@ -1,0 +1,20 @@
+.taskItem {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: #c70039;
+  padding-left: 1rem;
+
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.text__item {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}

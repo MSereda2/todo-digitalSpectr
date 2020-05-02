@@ -1,0 +1,14 @@
+.modal__form {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  select {
+    margin-bottom: 5rem;
+  }
+
+  button {
+    margin-top: 6rem;
+  }
+}

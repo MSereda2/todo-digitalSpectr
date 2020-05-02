@@ -1,0 +1,46 @@
+@import '../../../styles/variables';
+
+.input {
+  position: relative;
+  font-size: 1.4rem;
+  outline: none;
+  width: 100%;
+  display: block;
+  border: 1px solid $COLOR-MAIN-GRAY;
+  padding: .8rem 4rem;
+
+
+  &::-webkit-input-placeholder {
+    color: $COLOR-MAIN-GRAY; 
+    
+  }
+
+  &:focus {
+    border: 1px solid $COLOR-PRIMARY;
+
+    &::-webkit-input-placeholder {
+      color: $COLOR-MAIN-GRAY;
+    }
+  }
+}
+
+.label {
+  color: $COLOR-MAIN-GRAY;
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+
+  i {
+    padding-left: 1rem;
+    color: $COLOR-MAIN-BLACK;
+    opacity: 12;
+    z-index: 1000;
+    font-size: 1.5rem;
+  }
+
+}
+
+.error {
+  font-size: 1.2rem;
+  padding-top: .4rem;
+  color: red;
+}

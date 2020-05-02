@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.btnTask {
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  background-color: $COLOR-SECONDARY;
+  border: 1px solid $COLOR-SECONDARY;
+  margin-right: 1rem;
+  transition: all .1s;
+
+  span {
+    color: white;
+    font-size: 3.5rem;
+  }
+
+  &:hover {
+    background-color: darken($COLOR-SECONDARY, $amount: 10);
+  }
+}

@@ -1,0 +1,21 @@
+
+.taskItem {
+  margin-top: 2rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  
+  ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+ &__secondLevel {
+  padding-top: 1rem;
+ }
+
+ &__thirdLevel {
+  padding-top: 1rem;
+ }
+
+}
+

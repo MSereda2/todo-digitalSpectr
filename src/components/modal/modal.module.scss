@@ -1,0 +1,33 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.modal {
+ @include absCenter();
+ background-color: $COLOR-WHITE;
+ box-shadow: 0 0 2px 2px $COLOR-LIGHT-GRAY;
+ height: 38rem;
+ width: 50rem;
+
+ &__top {
+   padding: 0 1rem;
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid $COLOR-MAIN-BLACK;
+
+ }
+
+ &__heading {
+    font-size: 2rem;
+    padding: 1rem;
+ }
+
+ &__close {
+  outline: none;
+  text-decoration: none;
+  background-color: $COLOR-WHITE;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+ }
+
+}
