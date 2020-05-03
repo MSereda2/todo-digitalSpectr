@@ -52,9 +52,10 @@ const allowDelete = (state, action) => {
     })
   } else {
     return state.tasks.map(task => {
-      if (action.secondId && !task.isAllowedDelete) {
+      if (action.secondId) {
         return {
           ...task,
+          isAllowedDelete: task.taskNested.length === 3 && task.taskNested.every((task,i) => task.isAllowedDelete),
           taskNested: task.taskNested.map(el => {
             if (el.id === action.secondId) {
               return {
