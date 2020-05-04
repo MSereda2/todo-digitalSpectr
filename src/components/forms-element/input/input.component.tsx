@@ -1,10 +1,15 @@
 // Packages
-import React from 'react';
+import React, {FC} from 'react';
 
 // Styles
 import style from './input.module.scss';
 
-const Input = ({ input, meta, ...props }) => {
+type propsType = {
+  input: object,
+  meta: any,
+}
+
+const Input:FC<propsType> = ({ input, meta, ...props }) => {
 
   const hasError = meta ? meta.touched && meta.error : null;
 

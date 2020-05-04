@@ -22,7 +22,7 @@ type propsType = {
 
 const ModalForm:FC<InjectedFormProps<taskItemType> & propsType> = ({tasks,handleSubmit}) => (
   <form onSubmit={handleSubmit} className={style.modal__form}>
-    <Field tasks={tasks} name="selectLevel" component={Select} />
+    <Field tasks={tasks} name="selectLevel" component={Select} type="select"/>
     <Field validate={[requiredField]} name="taskName" component={Input} type="text" placeholder="Введите названия задания" />
     <Btn text="Добавить задание" />
   </form>
