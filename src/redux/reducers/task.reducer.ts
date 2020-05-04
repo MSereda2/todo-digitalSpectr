@@ -4,17 +4,19 @@ import { TASK__TYPES } from './task.types';
 // Functions Utils
 import { addTask, allowDelete, removeTask } from './task.utils';
 
+// TS Types
+import {InitialStateType,actionsType} from './task.typesTS';
 
-const INITIAL_STATE = {
+const INITIAL_STATE:InitialStateType = {
   tasks: [],
 }
 
-const taskReducer = (state = INITIAL_STATE, action) => {
+const taskReducer = (state = INITIAL_STATE, action: actionsType):InitialStateType => {
   switch (action.type) {
     case TASK__TYPES.ADD__TASK:
       return {
         ...state,
-        tasks: addTask(state, action)
+        tasks: addTask(state, action ),
       }
     case TASK__TYPES.MARK_DELETED:
       return {

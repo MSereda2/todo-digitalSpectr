@@ -3,7 +3,7 @@ import style from './task-item.module.scss';
 import { AiFillDelete } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 
-const TaskItem = (props) => {
+const TaskItem = (props: any) => {
   const { isAllowedDelete, removeTaskAC, markDeletedAC, id, nesteId, name } = props;
 
   const showWarning = () => {
@@ -41,10 +41,9 @@ const TaskItem = (props) => {
         onChange={markeAsDeleted}
         type="checkbox" />
       <span
-        onClick={showWarning}
         className={` ${style.text__item} ${isAllowedDelete ? style.completed : ''}`}>
         {name}
-        {isAllowedDelete && <span className={style.icon}>{<AiFillDelete />} </span>}
+        {isAllowedDelete && <span onClick={showWarning} className={style.icon}>{<AiFillDelete />} </span>}
       </span>
     </li>
   )

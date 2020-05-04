@@ -4,7 +4,7 @@ import React from 'react';
 // Styles
 import style from './top.module.scss';
 
-const Top = (props) => {
+const Top = () => {
 
   const days = [
     'Воскресенье',

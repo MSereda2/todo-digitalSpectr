@@ -1,5 +1,5 @@
 // Packages
-import React from 'react';
+import React, {FC} from 'react';
 import { connect } from 'react-redux';
 
 // Styles
@@ -12,13 +12,28 @@ import CreateTask from '../create-task/create-task.component';
 // Actions
 import { markDeletedAC, removeTaskAC } from '../../redux/reducers/task.action';
 
-const ToDo = (props) => {
+// types TS
+import {appStateType} from '../../redux/rootReducer';
+import {taskObjectType,itemId} from '../../redux/reducers/task.typesTS';
 
-  const listItems = (tasks) => tasks.map(task =>
+type mapStatePropsType = {
+  tasks: Array<taskObjectType>
+}
+
+type mapDispatchPropsType = {
+  markDeletedAC: (data: itemId) => void,
+  removeTaskAC: (data: itemId) => void
+}
+
+type propsType = mapStatePropsType & mapDispatchPropsType;
+
+const ToDo:FC<propsType> = ({tasks,...props}) => {
+
+  const listItems = (tasks: Array<taskObjectType>) => tasks.map(task =>
        <ParentTaskItem key={task.id} {...task} {...props} />);
 
-  const completed = props.tasks.filter(task => task.isAllowedDelete);
-  const pending = props.tasks.filter(task => !task.isAllowedDelete);
+  const completed = tasks.filter(task => task.isAllowedDelete);
+  const pending = tasks.filter(task => !task.isAllowedDelete);
 
   return (
     <main className={style.toDo}>
@@ -30,7 +45,7 @@ const ToDo = (props) => {
   )
 }
 
-const mapStatetoProps = (state) => ({
+const mapStatetoProps = (state: appStateType) => ({
   tasks: state.tasks.tasks
 })
 

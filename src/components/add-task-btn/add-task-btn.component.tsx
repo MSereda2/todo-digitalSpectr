@@ -1,10 +1,15 @@
 // Packages
-import React from 'react';
+import React, {FC} from 'react';
 
 // Style
 import style from './add-task-btn.module.scss';
 
-const AddTaskBtn = ({ showModal, modal }) => {
+type propsType = {
+  showModal: (modal: boolean) => void,
+  modal: boolean
+}
+
+const AddTaskBtn:FC<propsType> = ({ showModal, modal }) => {
   return (
     <button onClick={() => showModal(!modal)} className={style.btnTask}>
       <span>+</span>

@@ -1,11 +1,12 @@
-
-const addTask = (state, action) => {
+import {InitialStateType} from './task.typesTS';
+const addTask = (state: InitialStateType, action: any) => {
   if (!action.selectLevel || action.selectLevel === 'Создать новый родителский элемент') {
     let task = {
       id: Math.floor(Math.random() * Date.now()),
       isAllowedDelete: false,
       name: action.taskName,
       taskNested: [],
+      names: '23'
     }
     return [...state.tasks, task]
   } else {
@@ -30,7 +31,7 @@ const addTask = (state, action) => {
   }
 }
 
-const allowDelete = (state, action) => {
+const allowDelete = (state: InitialStateType, action: any) => {
   if (action.firstId) {
 
     return state.tasks.map((task) => {
@@ -55,7 +56,7 @@ const allowDelete = (state, action) => {
       if (action.secondId) {
         return {
           ...task,
-          isAllowedDelete: task.taskNested.length === 3 && task.taskNested.every((task,i) => task.isAllowedDelete),
+          isAllowedDelete: task.taskNested.filter((task, i) => task.isAllowedDelete).length >= 2,
           taskNested: task.taskNested.map(el => {
             if (el.id === action.secondId) {
               return {
@@ -73,7 +74,7 @@ const allowDelete = (state, action) => {
   }
 }
 
-const removeTask = (state, action) => {
+const removeTask = (state: InitialStateType, action: any) => {
   if (action.firstId) {
     return state.tasks.filter(task => {
       return task.id !== action.firstId

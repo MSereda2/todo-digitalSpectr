@@ -7,10 +7,10 @@ import style from './parent-task-item.module.scss';
 // Components
 import TaskItem from './task-item/task-item.component';
 
-const ParentTaskItem = (props) => {
+const ParentTaskItem = (props: any) => {
 
-  const nestedTaskList = (task) => {
-    return task.map((task =>
+  const nestedTaskList = (task: any) => {
+    return task.map(((task: any) =>
       <TaskItem
         key={task.id}
         isAllowedDelete={task.isAllowedDelete}
@@ -20,8 +20,8 @@ const ParentTaskItem = (props) => {
         removeTaskAC={props.removeTaskAC} />))
   }
 
-  const pending = props.taskNested.filter(task => !task.isAllowedDelete);
-  const complete = props.taskNested.filter(task => task.isAllowedDelete);
+  const pending = props.taskNested.filter((task: any) => !task.isAllowedDelete);
+  const complete = props.taskNested.filter((task: any) => task.isAllowedDelete);
 
   return (
     <div className={style.taskItem}>

@@ -13,7 +13,7 @@ function App() {
    <div className={style.container}>
      <div className={style.app}>
         <Top />
-       <ToDo />
+        <ToDo />
      </div>
    </div>
   )
