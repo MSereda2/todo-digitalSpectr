@@ -1,11 +1,13 @@
 // Packages
-import React, {FC} from 'react';
+import React, { FC } from 'react';
+
+
 
 // Styles
 import style from './select.module.scss';
 
 // Types TS
-import {taskObjectType} from '../../../redux/reducers/task.typesTS';
+import { taskObjectType } from '../../../redux/reducers/task.typesTS';
 
 type propsType = {
   input: object,
@@ -14,20 +16,21 @@ type propsType = {
 
 }
 
-const Select:FC<propsType> = ({ input, tasks, meta, ...props }) => (
-  <>
-    <label className={style.select__label}>Родителский элемент</label>
+const Select:FC<propsType> = ({ input, tasks, meta, ...props }) => {
 
+  return (
+    <>
     <select {...input} {...props} className={style.select} >
-
-      <option disabled>Выберите родителский элемент</option>
-      <option>Создать новый родителский элемент</option>
-      {tasks.map(task => (
-        <option key={task.id}>{task.name}</option>
-      ))}
+        <option disabled>Выберите родителский элемент</option>
+        <option>Создать новый родителский элемент</option>
+        {tasks.map(task => (
+          <option key={task.id}>{task.name}</option>
+        ))}
 
     </select>
-  </>
-)
+    </>
+  )
+
+}
 
 export default Select;

@@ -1,14 +1,26 @@
+@import '../../../styles/variables';
 .modal__form {
   padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
+  label {
+    color: $COLOR-MAIN-GRAY;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    
+  }
+
   select {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
 
   button {
     margin-top: 6rem;
   }
+}
+
+.radioContainer {
+  margin-bottom: 2rem;
 }

@@ -11,7 +11,8 @@ export type taskObjectType = {
   id: number,
   isAllowedDelete: boolean,
   name: string,
-  taskNested: Array<nestedTaskType>
+  secondLevelNested: Array<nestedTaskType> ,
+  thirdLevelNested: Array<nestedTaskType>
 };
 
 export type InitialStateType = {
@@ -21,12 +22,14 @@ export type InitialStateType = {
 // ACTION TYPES
 export type taskItemType = {
   taskName: string,
-  selectLevel: string
+  selectLevel: string,
+  selectParent: string
 };
 
 export type itemId = {
   firstId?: number,
-  secondId?: number
+  secondId?: number,
+  thirdId?: number
 };
 
 export type addTaskType = taskItemType & { type: typeof TASK__TYPES.ADD__TASK };

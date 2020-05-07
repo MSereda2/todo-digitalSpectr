@@ -4,7 +4,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 
 const TaskItem = (props: any) => {
-  const { isAllowedDelete, removeTaskAC, markDeletedAC, id, nesteId, name } = props;
+  const { isAllowedDelete, removeTaskAC, markDeletedAC, id,  name, secondLevelId, thirdLevelId } = props;
 
   const showWarning = () => {
     return Swal.fire({
@@ -21,15 +21,17 @@ const TaskItem = (props: any) => {
         if (id) {
           removeTaskAC({ firstId: id })
         } else {
-          removeTaskAC({ secondId: nesteId })
+          removeTaskAC({ secondId: secondLevelId })
         }
       }
     })
   }
 
   const markeAsDeleted = () => {
-    if (nesteId) {
-      markDeletedAC({ secondId: nesteId })
+    if (secondLevelId) {
+      markDeletedAC({ secondId: secondLevelId })
+    } else if(thirdLevelId) {
+      markDeletedAC({ thirdLevelId: thirdLevelId})
     } else {
       markDeletedAC({ firstId: id })
     }

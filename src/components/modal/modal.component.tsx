@@ -21,6 +21,7 @@ const Modal:FC<propsType> = ({ modal, showModal, tasks, addTask }) => {
   
 
   const onSubmit = (data: taskItemType) => {
+    console.log(data)
     addTask(data);
     showModal(false);
   }

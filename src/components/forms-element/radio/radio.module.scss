@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+.radio {
+  margin-bottom: .3rem;
+  text-align: start;
+  font-size: 1.4rem;
+
+  &__label {
+    padding-left: 1rem;
+  }
+
+}

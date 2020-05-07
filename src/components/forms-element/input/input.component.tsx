@@ -15,7 +15,6 @@ const Input:FC<propsType> = ({ input, meta, ...props }) => {
 
   return (
     <>
-      <label className={style.label}>Задания</label>
       <input {...input} {...props} className={style.input} />
       {hasError && <span className={`${hasError && style.error}`}>{meta.error}</span>}
     </>

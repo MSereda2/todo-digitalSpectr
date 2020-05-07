@@ -38,5 +38,4 @@ const mapStateToProps = (state: appStateType):mapStatePropsType => ({
   tasks: state.tasks.tasks
 })
 
-// TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultRootState>
 export default connect(mapStateToProps, { addTaskAC })(CreateTask);
