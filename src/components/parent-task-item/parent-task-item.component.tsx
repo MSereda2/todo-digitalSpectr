@@ -16,22 +16,23 @@ const ParentTaskItem = (props: any) => {
     return task.map(((task) =>
       <TaskItem
         key={task.id}
-        isAllowedDelete={task.isAllowedDelete}
         secondLevelId={task.id}
+        isAllowedDelete={task.isAllowedDelete}
         name={task.name}
+        removeTaskAC={props.removeTaskAC}
         markDeletedAC={props.markDeletedAC}
-        removeTaskAC={props.removeTaskAC} />))
+         />))
   }
 
   const componentThirdLevel = (task: Array<nestedTaskType>) => {
     return task.map(((task) =>
       <TaskItem
         key={task.id}
-        isAllowedDelete={task.isAllowedDelete}
         thirdLevelId={task.id}
+        isAllowedDelete={task.isAllowedDelete}
         name={task.name}
-        markDeletedAC={props.markDeletedAC}
-        removeTaskAC={props.removeTaskAC} />))
+        removeTaskAC={props.removeTaskAC}
+        markDeletedAC={props.markDeletedAC} />))
   }
 
   const nestedTask = (
