@@ -34,8 +34,6 @@ const ParentTaskItem = (props: any) => {
         removeTaskAC={props.removeTaskAC} />))
   }
 
-
-
   const nestedTask = (
     level: Array<nestedTaskType>,
     status: string,
@@ -66,24 +64,4 @@ const ParentTaskItem = (props: any) => {
   )
 }
 
-// {thirdLevelNested(pendinThirdtLevel)}
-// {thirdLevelNested(completeThirdLevel)}
 export default ParentTaskItem;
-
-
-// const thirdLevelNested = (task: any) => {
-//   return task.map(((task: any) =>
-//     <TaskItem
-//       key={task.id}
-//       isAllowedDelete={task.isAllowedDelete}
-//       thirdLevelId={task.id}
-//       name={task.name}
-//       markDeletedAC={props.markDeletedAC}
-//       removeTaskAC={props.removeTaskAC} />))
-// }
-
-// const pendingSecondLevel = props.secondLevelNested.filter((task: any) => !task.isAllowedDelete);
-// const completeSecondLevel = props.secondLevelNested.filter((task: any) => task.isAllowedDelete);
-
-// const pendinThirdtLevel = props.thirdLevelNested.filter((task: any) => !task.isAllowedDelete);
-// const completeThirdLevel = props.thirdLevelNested.filter((task: any) => task.isAllowedDelete);
