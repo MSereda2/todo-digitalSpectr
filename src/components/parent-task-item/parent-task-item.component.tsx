@@ -10,41 +10,32 @@ import TaskItem from './task-item/task-item.component';
 // Types TS
 import { nestedTaskType } from '../../types/task.typesTS';
 
-const ParentTaskItem = (props: any) => {
 
-  const componentSecondLevel = (task: Array<nestedTaskType>) => {
+const ParentTaskItem = (props: any) => {
+  const types = ["pending", "completed"];
+
+  const componentLevel = (task: Array<nestedTaskType>, idLevel: string) => {
     return task.map(((task) =>
       <TaskItem
         key={task.id}
-        secondLevelId={task.id}
+        {...{ [idLevel]: task.id }}
         isAllowedDelete={task.isAllowedDelete}
         name={task.name}
         removeTaskAC={props.removeTaskAC}
         markDeletedAC={props.markDeletedAC}
-         />))
-  }
-
-  const componentThirdLevel = (task: Array<nestedTaskType>) => {
-    return task.map(((task) =>
-      <TaskItem
-        key={task.id}
-        thirdLevelId={task.id}
-        isAllowedDelete={task.isAllowedDelete}
-        name={task.name}
-        removeTaskAC={props.removeTaskAC}
-        markDeletedAC={props.markDeletedAC} />))
+      />))
   }
 
   const nestedTask = (
     level: Array<nestedTaskType>,
-    status: string,
-    fn: (data: Array<nestedTaskType>) => void) => {
+    status: string, idLevel: String,
+    fn: (data: Array<nestedTaskType>, idLevel: any) => void) => {
     if (status === 'pending') {
       const pendingTask = level.filter((task: any) => !task.isAllowedDelete);
-      return fn(pendingTask);
+      return fn(pendingTask, idLevel);
     } else if (status === 'completed') {
       const completedTask = level.filter((task: any) => task.isAllowedDelete);
-      return fn(completedTask)
+      return fn(completedTask, idLevel)
     }
   }
 
@@ -53,11 +44,9 @@ const ParentTaskItem = (props: any) => {
       <ul className={style.taskItem__firstLevel}>
         <TaskItem {...props} />
         <ul className={style.taskItem__secondLevel}>
-          {nestedTask(props.secondLevelNested, 'pending', componentSecondLevel)}
-          {nestedTask(props.secondLevelNested, 'completed', componentSecondLevel)}
+          {types.map(type => nestedTask(props.secondLevelNested, type, 'secondLevelId', componentLevel))}
           <ul className={style.taskItem__thirdLevel}>
-            {nestedTask(props.thirdLevelNested, 'pending', componentThirdLevel)}
-            {nestedTask(props.thirdLevelNested, 'completed', componentThirdLevel)}
+            {types.map(type => nestedTask(props.thirdLevelNested, type, 'thirdLevelId', componentLevel))}
           </ul>
         </ul>
       </ul>
