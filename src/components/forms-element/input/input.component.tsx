@@ -1,5 +1,5 @@
 // Packages
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 
 // Styles
 import style from './input.module.scss';
@@ -9,7 +9,7 @@ type propsType = {
   meta: any,
 }
 
-const Input:FC<propsType> = ({ input, meta, ...props }) => {
+const Input: FC<propsType> = ({ input, meta, ...props }) => {
 
   const hasError = meta ? meta.touched && meta.error : null;
 

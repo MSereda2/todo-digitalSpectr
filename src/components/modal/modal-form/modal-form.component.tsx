@@ -15,7 +15,7 @@ import Radio from '../../forms-element/radio/radio.component';
 import { requiredField } from '../../../helpers/validator';
 
 // Types Ts
-import { taskItemType, taskObjectType } from '../../../redux/reducers/task.typesTS';
+import { taskItemType, taskObjectType } from '../../../types/task.typesTS';
 
 type propsType = {
   tasks: Array<taskObjectType>,
@@ -29,7 +29,7 @@ const ModalForm: FC<InjectedFormProps<taskItemType> & propsType> = ({ tasks, han
       name="selectParent"
       component={Select}
       type="select" />
-      <label>Выберить уровень вложености</label>
+    <label>Выберить уровень вложености</label>
     <div className={style.radioContainer}>
       <Field
         name="selectLevel"

@@ -7,7 +7,7 @@ import React, { FC } from 'react';
 import style from './select.module.scss';
 
 // Types TS
-import { taskObjectType } from '../../../redux/reducers/task.typesTS';
+import { taskObjectType } from '../../../types/task.typesTS';
 
 type propsType = {
   input: object,

@@ -18,10 +18,12 @@ const TaskItem = (props: any) => {
       confirmButtonText: 'Да, Удалить'
     }).then((result) => {
       if (result.value) {
-        if (id) {
-          removeTaskAC({ firstId: id })
-        } else {
+        if (secondLevelId) {
           removeTaskAC({ secondId: secondLevelId })
+        } else if(thirdLevelId) {
+          removeTaskAC({ thirdId: thirdLevelId })
+        } else {
+          removeTaskAC({ firstId: id })
         }
       }
     })
@@ -31,7 +33,7 @@ const TaskItem = (props: any) => {
     if (secondLevelId) {
       markDeletedAC({ secondId: secondLevelId })
     } else if(thirdLevelId) {
-      markDeletedAC({ thirdLevelId: thirdLevelId})
+      markDeletedAC({ thirdId: thirdLevelId})
     } else {
       markDeletedAC({ firstId: id })
     }

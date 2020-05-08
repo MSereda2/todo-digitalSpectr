@@ -8,7 +8,7 @@ import style from './modal.module.scss';
 import ModalForm from './modal-form/modal-form.component';
 
 // Types TS
-import {taskObjectType,taskItemType} from '../../redux/reducers/task.typesTS';
+import {taskObjectType,taskItemType} from '../../types/task.typesTS';
 
 type propsType = {
   modal: boolean,
@@ -21,7 +21,6 @@ const Modal:FC<propsType> = ({ modal, showModal, tasks, addTask }) => {
   
 
   const onSubmit = (data: taskItemType) => {
-    console.log(data)
     addTask(data);
     showModal(false);
   }

@@ -14,7 +14,7 @@ import { markDeletedAC, removeTaskAC } from '../../redux/reducers/task.action';
 
 // types TS
 import {appStateType} from '../../redux/rootReducer';
-import {taskObjectType,itemId} from '../../redux/reducers/task.typesTS';
+import {taskObjectType,itemId} from '../../types/task.typesTS';
 
 type mapStatePropsType = {
   tasks: Array<taskObjectType>

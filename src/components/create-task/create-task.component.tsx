@@ -10,7 +10,7 @@ import Modal from '../modal/modal.component';
 import { addTaskAC } from '../../redux/reducers/task.action';
 
 // Types TS
-import {taskObjectType,taskItemType} from '../../redux/reducers/task.typesTS';
+import {taskObjectType,taskItemType} from '../../types/task.typesTS';
 import {appStateType} from '../../redux/rootReducer';
 
 type mapDispatchPropsType = {
