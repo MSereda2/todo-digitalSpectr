@@ -12,7 +12,7 @@ import { nestedTaskType } from '../../types/task.typesTS';
 
 
 const ParentTaskItem = (props: any) => {
-  const types = ["pending", "completed"];
+  const types = ['pending', 'completed'];
 
   const componentLevel = (task: Array<nestedTaskType>, idLevel: string) => {
     return task.map(((task) =>
@@ -26,17 +26,9 @@ const ParentTaskItem = (props: any) => {
       />))
   }
 
-  const nestedTask = (
-    level: Array<nestedTaskType>,
-    status: string, idLevel: String,
-    fn: (data: Array<nestedTaskType>, idLevel: any) => void) => {
-    if (status === 'pending') {
-      const pendingTask = level.filter((task: any) => !task.isAllowedDelete);
-      return fn(pendingTask, idLevel);
-    } else if (status === 'completed') {
-      const completedTask = level.filter((task: any) => task.isAllowedDelete);
-      return fn(completedTask, idLevel)
-    }
+  const nestedTask = ( level: Array<nestedTaskType>, status: string,idLevel:String, fn: (data: Array<nestedTaskType>, id: any) => void) => {
+      const task = level.filter((task: any) => status === 'pending' ? !task.isAllowedDelete : task.isAllowedDelete)
+      return fn(task,idLevel)
   }
 
   return (
